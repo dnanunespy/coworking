@@ -1,0 +1,23 @@
+<!-- reservas/templates/reservas/lista_espacos.html -->
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lista de Espaços de Coworking</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'reservas/styles.css' %}">
+</head>
+
+<body>
+    <h1>Espaços de Coworking Disponíveis</h1>
+    <ul>
+        {% for espaco in espacos %}
+        <li>
+            <a href="{% url 'detalhe_espaco' espaco.id %}">{{ espaco.nome }}</a> - Capacidade: {{ espaco.capacidade }}
+            pessoas
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+
+</html>

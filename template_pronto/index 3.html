@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Coworking Space - Página de Agendamento</title>
+  <meta name="description" content="Página de agendamento para o espaço de coworking">
+  <meta name="keywords" content="coworking, agendamento, espaço de trabalho">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-xl-0">
+        <h1 class="sitename">Coworking Space</h1><span>.</span>
+      </a>
+
+      <nav id="navmenu" class="navmenu">
+        <ul>
+          <li><a href="#hero" class="active">Início</a></li>
+          <li><a href="#spaces">Espaços</a></li>
+          <li><a href="#services">Serviços</a></li>
+          <li><a href="#pricing">Preços</a></li>
+          <li><a href="#contact">Contato</a></li>
+        </ul>
+        <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+      </nav>
+
+      <a class="btn-getstarted" href="#schedule">Agendar Agora</a>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero section dark-background">
+      <img src="assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-10">
+            <h2 data-aos="fade-up" data-aos-delay="100">Bem Vindo ao Nosso Espaço!</h2>
+            <p data-aos="fade-up" data-aos-delay="200">Nós somos uma equipe que veio para inovar o seu modo de encontrar um Cowork!</p>
+          </div>
+          <div class="col-lg-5" data-aos="fade-up" data-aos-delay="300">
+            <form action="forms/newsletter.php" method="post" class="php-email-form">
+              <div class="sign-up-form">
+                <input type="email" name="email" placeholder="Seu e-mail">
+                <input type="submit" value="Inscrever-se">
+              </div>
+              <div class="loading">Carregando</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Sua inscrição foi enviada. Obrigado!</div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Hero Section -->
+
+    <!-- Clients Section -->
+    <section id="clients" class="clients section">
+      <div class="container" data-aos="fade-up">
+        <div class="row gy-4">
+          <!-- Adicione aqui seus logotipos de clientes -->
+        </div>
+      </div>
+    </section><!-- /Clients Section -->
+
+<!-- About Section -->
+<section id="about" class="about section light-background">
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+    <div class="row align-items-xl-center gy-5">
+
+      <div class="col-xl-5 content">
+        <h3>Sobre Nós</h3>
+        <h2>O Que Oferecemos</h2>
+        <p>Nossos espaços de coworking são projetados para criar um ambiente produtivo e inspirador. Oferecemos soluções flexíveis que atendem a diversas necessidades, desde startups em crescimento até equipes corporativas estabelecidas.</p>
+        <a href="#schedule" class="read-more"><span>Saiba Mais</span><i class="bi bi-arrow-right"></i></a>
+      </div>
+
+      <div class="col-xl-7">
+        <div class="row gy-4 icon-boxes">
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon-box">
+              <i class="bi bi-buildings"></i>
+              <h3>Ambientes Modernos</h3>
+              <p>Nossos espaços são projetados com um design moderno e funcional, oferecendo ambientes confortáveis e inspiradores para aumentar sua produtividade.</p>
+            </div>
+          </div> <!-- End Icon Box -->
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon-box">
+              <i class="bi bi-clipboard-pulse"></i>
+              <h3>Flexibilidade e Adaptabilidade</h3>
+              <p>Oferecemos soluções flexíveis para atender a todas as suas necessidades, desde estações de trabalho compartilhadas até escritórios privados e salas de reunião.</p>
+            </div>
+          </div> <!-- End Icon Box -->
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon-box">
+              <i class="bi bi-command"></i>
+              <h3>Serviços Completos</h3>
+              <p>De internet de alta velocidade a serviços de impressão e suporte técnico, temos tudo o que você precisa para trabalhar com eficiência e conforto.</p>
+            </div>
+          </div> <!-- End Icon Box -->
+
+          <div class="col-md-6" data-aos="fade-up" data-aos-delay="500">
+            <div class="icon-box">
+              <i class="bi bi-graph-up-arrow"></i>
+              <h3>Crescimento e Oportunidades</h3>
+              <p>Nosso ambiente colaborativo promove networking e oportunidades de crescimento. Conecte-se com outros profissionais e expanda suas possibilidades de negócios.</p>
+            </div>
+          </div> <!-- End Icon Box -->
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</section><!-- /About Section -->
+
+
+    <!-- Features Section -->
+    <section id="features" class="features section dark-background">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h3>Características</h3>
+            <p>Explore as características e vantagens de nossos espaços de coworking, projetados para atender às suas necessidades profissionais e de colaboração.</p>
+          </div>
+          <div class="col-lg-6">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="feature-item">
+                  <h4>Espaços Flexíveis</h4>
+                  <p>Escolha entre diferentes tipos de ambientes, desde mesas compartilhadas até escritórios privados.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="feature-item">
+                  <h4>Internet Rápida</h4>
+                  <p>Conecte-se com uma internet de alta velocidade para garantir produtividade e eficiência.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="feature-item">
+                  <h4>Áreas de Convivência</h4>
+                  <p>Relaxe em nossas áreas comuns equipadas com conforto e entretenimento.</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="feature-item">
+                  <h4>Serviços Adicionais</h4>
+                  <p>Beneficie-se de serviços como impressão, café, e suporte técnico para uma experiência completa.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Features Section -->
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing section">
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Preços</h2>
+        <p>Escolha o plano que melhor se adapta às suas necessidades e aproveite nossos serviços de coworking.</p>
+      </div><!-- End Section Title -->
+      <div class="container" data-aos="zoom-in" data-aos-delay="100">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="pricing-item">
+              <h3>Plano Básico</h3>
+              <div class="icon">
+                <i class="bi bi-box"></i>
+              </div>
+              <h4><sup>R$</sup>0<span> / mês</span></h4>
+              <ul>
+                <li><i class="bi bi-check"></i> Acesso a áreas comuns</li>
+                <li><i class="bi bi-check"></i> Internet de alta velocidade</li>
+                <li class="na"><i class="bi bi-x"></i> Espaço reservado</li>
+              </ul>
+              <div class="text-center"><a href="#schedule" class="buy-btn">Agendar</a></div>
+            </div>
+          </div><!-- End Pricing Item -->
+          <div class="col-lg-4">
+            <div class="pricing-item featured">
+              <h3>Plano Empresarial</h3>
+              <div class="icon">
+                <i class="bi bi-rocket"></i>
+              </div>
+              <h4><sup>R$</sup>299<span> / mês</span></h4>
+              <ul>
+                <li><i class="bi bi-check"></i> Acesso a áreas comuns</li>
+                <li><i class="bi bi-check"></i> Internet de alta velocidade</li>
+                <li><i class="bi bi-check"></i> Espaço reservado</li>
+                <li><i class="bi bi-check"></i> Benefícios adicionais</li>
+              </ul>
+              <div class="text-center"><a href="#schedule" class="buy-btn">Agendar</a></div>
+            </div>
+          </div><!-- End Pricing Item -->
+          <div class="col-lg-4">
+            <div class="pricing-item">
+              <h3>Plano Premium</h3>
+              <div class="icon">
+                <i class="bi bi-gem"></i>
+              </div>
+              <h4><sup>R$</sup>499<span> / mês</span></h4>
+              <ul>
+                <li><i class="bi bi-check"></i> Acesso a áreas comuns</li>
+                <li><i class="bi bi-check"></i> Internet de alta velocidade</li>
+                <li><i class="bi bi-check"></i> Espaço reservado</li>
+                <li><i class="bi bi-check"></i> Benefícios adicionais</li>
+                <li><i class="bi bi-check"></i> Acesso a salas de reunião</li>
+              </ul>
+              <div class="text-center"><a href="#schedule" class="buy-btn">Agendar</a></div>
+            </div>
+          </div><!-- End Pricing Item -->
+        </div>
+      </div>
+    </section><!-- /Pricing Section -->
+
+    <!-- Booking Section -->
+    <section id="schedule" class="booking section light-background">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>Agende Seu Espaço</h2>
+          <p>Preencha o formulário abaixo para reservar seu espaço de trabalho.</p>
+        </div>
+
+        <form action="forms/booking.php" method="post" class="php-email-form">
+          <div class="row gy-4">
+            <div class="col-md-6">
+              <input type="text" name="name" class="form-control" placeholder="Seu Nome" required>
+            </div>
+            <div class="col-md-6">
+              <input type="email" name="email" class="form-control" placeholder="Seu Email" required>
+            </div>
+            <div class="col-md-6">
+              <input type="text" name="phone" class="form-control" placeholder="Seu Telefone" required>
+            </div>
+            <div class="col-md-6">
+              <input type="date" name="date" class="form-control" required>
+            </div>
+            <div class="col-12">
+              <textarea name="message" class="form-control" rows="6" placeholder="Mensagem" required></textarea>
+            </div>
+            <div class="col-12 text-center">
+              <button type="submit">Reservar Agora</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section><!-- /Booking Section -->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <h2>Contato</h2>
+          <p>Entre em contato conosco para mais informações ou dúvidas.</p>
+        </div>
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="contact-info">
+              <h4>Informações de Contato</h4>
+              <p><strong>Endereço:</strong> Rua Exemplo, 123, Cidade, Estado, 12345-678</p>
+              <p><strong>Telefone:</strong> +55 11 98765-4321</p>
+              <p><strong>Email:</strong> contato@coworking.com.br</p>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <form action="forms/contact.php" method="post" class="php-email-form">
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <input type="text" name="name" class="form-control" placeholder="Seu Nome" required>
+                </div>
+                <div class="col-md-6">
+                  <input type="email" name="email" class="form-control" placeholder="Seu Email" required>
+                </div>
+                <div class="col-md-12">
+                  <textarea name="message" class="form-control" rows="6" placeholder="Sua Mensagem" required></textarea>
+                </div>
+                <div class="col-12 text-center">
+                  <button type="submit">Enviar Mensagem</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Contact Section -->
+
+  </main><!-- End #main -->
+
+  <!-- Footer -->
+  <footer id="footer" class="footer position-relative light-background">
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-5 col-md-12 footer-about">
+          <a href="index.html" class="logo d-flex align-items-center">
+            <span class="sitename">Coworking Space</span>
+          </a>
+          <p>Encontre o espaço perfeito para trabalhar, colaborar e crescer. Reserve hoje e descubra o melhor em coworking.</p>
+          <div class="social-links d-flex mt-4">
+            <a href="#"><i class="bi bi-twitter"></i></a>
+            <a href="#"><i class="bi bi-facebook"></i></a>
+            <a href="#"><i class="bi bi-instagram"></i></a>
+            <a href="#"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-7 col-md-12 footer-contact">
+          <h4>Contato</h4>
+          <p>Rua Exemplo, 123</p>
+          <p>Cidade, Estado, 12345-678</p>
+          <p><strong>Telefone:</strong> +55 11 98765-4321</p>
+          <p><strong>Email:</strong> contato@coworking.com.br</p>
+        </div>
+      </div>
+    </div>
+  </footer><!-- /Footer -->
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <!-- Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

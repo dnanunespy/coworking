@@ -10,6 +10,9 @@ class EspacoCoworking(models.Model):
     capacidade = models.IntegerField()
     preco_por_hora = models.DecimalField(max_digits=10, decimal_places=2)
     foto = models.ImageField(upload_to='fotos/', blank=True, null=True)
+    latitude = models.FloatField(default=0)
+    longitude = models.FloatField(default=0)
+
     # Definindo um relacionamento com o usuário como proprietário
     proprietario = models.ForeignKey(User, on_delete=models.CASCADE)
 

@@ -7,9 +7,27 @@ from .models import EspacoCoworking, Reserva
 from .forms import ReservaForm
 from django.shortcuts import render
 
+from django.shortcuts import render
+from django.core.serializers import serialize
+import json
+
 
 def index(request):
-    return render(request, 'reservas/index.html')
+    espacos = EspacoCoworking.objects.all()
+   
+    espacosJ = EspacoCoworking.objects.all()
+    espacos_json = serialize('json', espacosJ)
+    
+    espacos_json = json.loads(espacos_json)
+    #print(json.dumps(espacos_json))
+
+    context = {
+        'espacos': espacos,
+        'espacosJ': json.dumps(espacos_json)
+
+    }
+
+    return render(request, 'reservas/index.html', context)
 
 
 @login_required
@@ -39,6 +57,7 @@ def lista_espacos(request):
 
 
 def register(request):
+    #print("Achou a função!!!!1")
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
         if form.is_valid():
@@ -60,6 +79,7 @@ def is_coworking_admin(user):
 @user_passes_test(is_coworking_admin)
 @login_required
 def gerenciar_espacos(request):
+   # print("Opaaa!")
     espacos = EspacoCoworking.objects.filter(proprietario=request.user)
     return render(request, 'reservas/gerenciar_espacos.html', {'espacos': espacos})
 

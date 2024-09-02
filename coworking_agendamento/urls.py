@@ -10,10 +10,18 @@ from reservas import views as reservas_views  # Importe a view index
 urlpatterns = [
     path('admin/', admin.site.urls),
     # Define a view index como a página inicial
+    
     path('', reservas_views.index, name='index'),
+    
     path('login/', auth_views.LoginView.as_view(template_name='reservas/login.html'),
          name='login'),  # Página de login
+    
     path('reservas/', include('reservas.urls')),  # Inclui URLs do app reservas
+
+    path('lista/', include('reservas.urls')), 
+    
+    path('register/', reservas_views.register, name='register'),  # Página de registro
+    
 ]
 
 if settings.DEBUG:

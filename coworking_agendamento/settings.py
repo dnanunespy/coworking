@@ -24,9 +24,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-tc1bj)6qgqii&llzvo7$blj$akqpz!#c1eun^lafjoue#^h+%n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -76,14 +76,12 @@ WSGI_APPLICATION = 'coworking_agendamento.wsgi.application'
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 
+
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'coworking_agendamento',  # Nome do banco de dados que você criou
-        'USER': 'myuser',                 # Nome do usuário do PostgreSQL
-        'PASSWORD': 'masterkey',         # Senha do usuário do PostgreSQL
-        'HOST': 'localhost',              # Ou o IP do servidor PostgreSQL
-        'PORT': '5432',                   # Porta padrão do PostgreSQL
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -172,6 +170,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 
 STATIC_URL = '/static/'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
 STATICFILES_DIRS = [
-    BASE_DIR / "coworking_agendamento" / "static",
+    os.path.join(BASE_DIR, 'coworking_agendamento', 'static'),
+    os.path.join(BASE_DIR, 'reservas', 'static'),
 ]

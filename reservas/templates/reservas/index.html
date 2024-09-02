@@ -9,6 +9,7 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
 
+    
     <!-- Favicons -->
     <link href="{% static 'img/favicon.png' %}" rel="icon">
     <link href="{% static 'img/apple-touch-icon.png' %}" rel="apple-touch-icon">
@@ -18,12 +19,12 @@
 
     <!-- Main CSS File -->
     <link href="{% static 'css/main.css' %}" rel="stylesheet">
+    
 
     <!-- Fonts and Vendor CSS Files -->
     <link href="https://fonts.googleapis.com" rel="preconnect">
     <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
     <link href="{% static 'vendor/aos/aos.css' %}" rel="stylesheet">
     <link href="{% static 'vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
@@ -239,6 +240,146 @@
             </div>
 
         </section><!-- /Stats Section -->
+
+
+        <!-- Spaces Section -->
+        <section id="spaces" class="services section">
+            <!-- Section Title -->
+            <div class="container section-title" data-aos="fade-up">
+                <h2>Espaços</h2>
+                <p>Explore os Espaços que oferecemos para melhorar sua experiência de trabalho em nosso coworking.</p>
+            </div><!-- End Section Title -->
+            <style>
+                .mapaGoogle {
+                    height: 250px;  /* Altura do mapa */
+                    width: 50%;    /* Largura do mapa */
+                }
+
+                .filtroEMapa{
+                    display: flex;
+                    justify-content: center; /* Centraliza horizontalmente */
+                    align-items: center;     /* Centraliza verticalmente */
+                    flex-direction: row;
+                    height: 25vh;           /* Ajuste a altura conforme necessário */
+                }
+            </style>
+
+            <div class="filtroEMapa">
+
+                
+
+                
+
+                <!-- Incluir a API JavaScript do Google Maps -->
+                <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKJeB-GheZ0ccCaj9xh6CTssXsbZU3uPI&callback=initMap" async defer></script>
+                
+                <div id="map" class="mapaGoogle"></div>
+
+
+
+            </div>
+            <!-- Main Content -->
+            <main class="main mt-5">
+                <section class="section">
+                    <div class="container" data-aos="fade-up">
+                        <div class="section-title">
+                            <h2>Espaços de Coworking Disponíveis</h2>
+                        </div>
+                        <center> 
+                            <h1>Filtro de Busca</h1>
+                            <input type="text" id="searchInput" placeholder="Digite para buscar...">
+                        </br></br>
+                        </center>
+                        <div class="row gy-4" id="listaEspacos">
+                            {% for espaco in espacos %}
+                            <div class="col-lg-4 col-md-6">
+                                <div class="card h-100 shadow-sm">
+                                    <!-- Ajuste para buscar a imagem do diretório de mídia -->
+                                    <img src="{{ espaco.foto.url }}" class="card-img-top" alt="Imagem do Espaço">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ espaco.nome }}</h5>
+                                        <p class="card-text">Capacidade: {{ espaco.capacidade }} pessoas</p>
+                                        <a href="{% url 'detalhe_espaco' espaco.id %}" class="btn btn-primary">Ver Detalhes</a>
+                                    </div>
+                                </div>
+                            </div>
+                            {% empty %}
+                            <p>Não há espaços de coworking disponíveis no momento.</p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <script>
+                // JavaScript para filtrar a lista
+                document.getElementById('searchInput').addEventListener('keyup', function() {
+                    //alert('Funfou!');
+                    const filter = this.value.toLowerCase();
+                    const items = document.querySelectorAll('#listaEspacos div');
+                    
+                    items.forEach(function(item) {
+                        const text = item.textContent.toLowerCase();
+                        if (text.includes(filter)) {
+                            item.style.display = '';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            </script>
+            <script>
+                
+
+                // Função que inicializa o mapa
+                function initMap() {
+                    
+                    // Coordenadas para vários locais
+                    var espacos = JSON.parse('{{ espacosJ|escapejs }}');
+                    var listaEnderecos = [];
+
+                    espacos.forEach(function(espaco) {
+
+                        listaEnderecos.push({
+                            lat: espaco.fields.latitude,
+                            lng: espaco.fields.longitude,
+                            title: espaco.fields.nome
+
+                        });
+
+                    });
+
+                    
+                    // Cria o mapa, centralizando na primeira localização
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 13,  // Defina um zoom adequado para mostrar todos os marcadores
+                        center: listaEnderecos[0]  // Centraliza na primeira localização
+                    });
+
+                    // Adiciona os marcadores no mapa
+                    //locations.forEach(function(location) {
+                    listaEnderecos.forEach(function(location) {
+
+                            var marker = new google.maps.Marker({
+                            position: location,
+                            map: map,
+                            title: location.title  // Título do marcador (aparece ao passar o mouse)
+                        });
+                    });
+
+
+                }
+            </script>
+
+
+        </section><!-- /Services Spaces -->
+
+
+
+
+
+
+
         <!-- Services Section -->
         <section id="services" class="services section">
             <!-- Section Title -->
